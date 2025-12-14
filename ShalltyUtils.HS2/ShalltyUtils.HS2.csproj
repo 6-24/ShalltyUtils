@@ -77,6 +77,11 @@
       <HintPath>..\..\packages\IllusionModdingAPI.HS2API.1.35.0\lib\net46\HS2API.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="HS2PE, Version=2.21.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hsplugins\bin\HS2\HS2PE.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="HS2_ExtensibleSaveFormat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ExtensibleSaveFormat.HoneySelect2.19.2.1\lib\net46\HS2_ExtensibleSaveFormat.dll</HintPath>
       <Private>False</Private>
@@ -103,12 +108,23 @@
     <Reference Include="MonoMod.Utils">
       <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\MonoMod.Utils.dll</HintPath>
     </Reference>
+    <Reference Include="NodesConstraints, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hsplugins\bin\HS2\NodesConstraints.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Sirenix.Serialization, Version=2.0.13.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\IllusionLibs.HoneySelect2.Sirenix.Serialization.2020.5.29.4\lib\net46\Sirenix.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
+    <Reference Include="Timeline, Version=1.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hsplugins\bin\HS2\Timeline.dll</HintPath>
+      <Private>False</Private>
+      <Aliases>global,aliasTimeline</Aliases>
+    </Reference>
     <Reference Include="UniRx, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\IllusionLibs.HoneySelect2.UniRx.2020.5.29.4\lib\net46\UniRx.dll</HintPath>
       <Private>False</Private>
@@ -148,37 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-	<ItemGroup>
-		<Reference Include="NodesConstraints.HS2">
-			<HintPath>..\..\bin\NodesConstraints.dll</HintPath>
-			<Private>False</Private>
-			<SpecificVersion>False</SpecificVersion>
-		</Reference>
-		<Reference Include="Timeline.HS2">
-			<HintPath>..\..\bin\Timeline.dll</HintPath>
-			<Private>False</Private>
-			<SpecificVersion>False</SpecificVersion>
-			<Aliases>global,aliasTimeline</Aliases>
-		</Reference>
-	</ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\hsplugins\HS2PE\HS2PE.csproj">
-      <Project>{19bf99c1-720f-41f4-a241-eb4cf589e6ad}</Project>
-      <Name>HS2PE</Name>
-			<SpecificVersion>False</SpecificVersion>
-    </ProjectReference>
-    <!-- <ProjectReference Include="..\..\hsplugins\NodesConstraints.HS2\NodesConstraints.HS2.csproj">
-      <Project>{9e8a6bdf-1100-4b2e-b2f4-69e1c00092af}</Project>
-      <Name>NodesConstraints.HS2</Name>
-			<SpecificVersion>False</SpecificVersion>
-    </ProjectReference>
-    <ProjectReference Include="..\..\hsplugins\Timeline.HS2\Timeline.HS2.csproj">
-      <Project>{0e8a5a0b-d464-4950-ba76-e23f4f74fcfd}</Project>
-      <Name>Timeline.HS2</Name>
-      <Aliases>global,aliasTimeline</Aliases>
-			<SpecificVersion>False</SpecificVersion>
-    </ProjectReference> -->
   </ItemGroup>
   <Import Project="..\ShalltyUtils.Core\ShalltyUtils.Core.projitems" Label="Shared" />
   <Import Project="..\..\Shared\Shared.projitems" Label="Shared" />
