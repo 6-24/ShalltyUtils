@@ -80,53 +80,53 @@ namespace ShalltyUtils.TimelineBaking
             List<string> transformNames = new List<string>();
 
             List<string> leftFingerBones = new List<string> {
-                        "cf_j_thumb01_L",
-                        "cf_j_thumb02_L",
-                        "cf_j_thumb03_L",
+                        "cf_J_Hand_Thumb01_L",
+                        "cf_J_Hand_Thumb02_L",
+                        "cf_J_Hand_Thumb03_L",
 
-                        "cf_j_index01_L",
-                        "cf_j_index02_L",
-                        "cf_j_index03_L",
+                        "cf_J_Hand_Index01_L",
+                        "cf_J_Hand_Index02_L",
+                        "cf_J_Hand_Index03_L",
 
-                        "cf_j_middle01_L",
-                        "cf_j_middle02_L",
-                        "cf_j_middle03_L",
+                        "cf_J_Hand_Middle01_L",
+                        "cf_J_Hand_Middle02_L",
+                        "cf_J_Hand_Middle03_L",
 
-                        "cf_j_ring01_L",
-                        "cf_j_ring02_L",
-                        "cf_j_ring03_L",
+                        "cf_J_Hand_Ring01_L",
+                        "cf_J_Hand_Ring02_L",
+                        "cf_J_Hand_Ring03_L",
 
-                        "cf_j_little01_L",
-                        "cf_j_little02_L",
-                        "cf_j_little03_L"
+                        "cf_J_Hand_Little01_L",
+                        "cf_J_Hand_Little02_L",
+                        "cf_J_Hand_Little03_L"
                     };
 
             List<string> rightFingerBones = new List<string> {
-                        "cf_j_thumb01_R",
-                        "cf_j_thumb02_R",
-                        "cf_j_thumb03_R",
+                        "cf_J_Hand_Thumb01_R",
+                        "cf_J_Hand_Thumb02_R",
+                        "cf_J_Hand_Thumb03_R",
 
-                        "cf_j_index01_R",
-                        "cf_j_index02_R",
-                        "cf_j_index03_R",
+                        "cf_J_Hand_Index01_R",
+                        "cf_J_Hand_Index02_R",
+                        "cf_J_Hand_Index03_R",
 
-                        "cf_j_middle01_R",
-                        "cf_j_middle02_R",
-                        "cf_j_middle03_R",
+                        "cf_J_Hand_Middle01_R",
+                        "cf_J_Hand_Middle02_R",
+                        "cf_J_Hand_Middle03_R",
 
-                        "cf_j_ring01_R",
-                        "cf_j_ring02_R",
-                        "cf_j_ring03_R",
+                        "cf_J_Hand_Ring01_R",
+                        "cf_J_Hand_Ring02_R",
+                        "cf_J_Hand_Ring03_R",
 
-                        "cf_j_little01_R",
-                        "cf_j_little02_R",
-                        "cf_j_little03_R"
+                        "cf_J_Hand_Little01_R",
+                        "cf_J_Hand_Little02_R",
+                        "cf_J_Hand_Little03_R"
                     };
 
             if (UI.animBakeToggleHead.isOn)
             {
-                transformNames.Add("cf_j_head");
-                transformNames.Add("cf_j_neck");
+                transformNames.Add("cf_J_Head");
+                transformNames.Add("cf_J_Neck");
             }
 
             if (UI.animBakeToggleLeftFingers.isOn)
@@ -293,27 +293,27 @@ namespace ShalltyUtils.TimelineBaking
         {
             switch (name)
             {
-                case "cf_t_hips(work)":
+                case "f_t_hips(work)":
                     return UI.animBakeToggleHips.isOn;
 
-                case "cf_t_shoulder_L(work)":
-                case "cf_t_elbo_L(work)":
-                case "cf_t_hand_L(work)":
+                case "f_t_shoulder_L(work)":
+                case "f_t_elbo_L(work)":
+                case "f_t_arm_L(work)":
                     return UI.animBakeToggleLeftArm.isOn;
 
-                case "cf_t_shoulder_R(work)":
-                case "cf_t_elbo_R(work)":
-                case "cf_t_hand_R(work)":
+                case "f_t_shoulder_R(work)":
+                case "f_t_elbo_R(work)":
+                case "f_t_arm_R(work)":
                     return UI.animBakeToggleRightArm.isOn;
 
-                case "cf_t_waist_L(work)":
-                case "cf_t_knee_L(work)":
-                case "cf_t_leg_L(work)":
+                case "f_t_thigh_L(work)":
+                case "f_t_knee_L(work)":
+                case "f_t_leg_L(work)":
                     return UI.animBakeToggleLeftLeg.isOn;
 
-                case "cf_t_waist_R(work)":
-                case "cf_t_knee_R(work)":
-                case "cf_t_leg_R(work)":
+                case "f_t_thigh_R(work)":
+                case "f_t_knee_R(work)":
+                case "f_t_leg_R(work)":
                     return UI.animBakeToggleRightLeg.isOn;
 
                 default:

@@ -226,7 +226,8 @@ namespace ShalltyUtils
                                     }
                                     else
                                     {
-                                        _timeline.SelectKeyframes(display.keyframe.parent.keyframes.First(k => k.Value == display.keyframe));
+                                        // TODO!
+                                        //_timeline.SelectKeyframes(display.keyframe.parent.keyframes.First(k => k.Value == display.keyframe));
 
                                         if (_timeline._selectedKeyframes.Count > 0)
                                         {

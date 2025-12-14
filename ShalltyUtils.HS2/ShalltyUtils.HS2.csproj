@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\IllusionLibs.BepInEx.Harmony.2.9.0\lib\net35\0Harmony.dll</HintPath>
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -57,20 +57,25 @@
       <HintPath>..\..\packages\IllusionLibs.HoneySelect2.Assembly-CSharp-firstpass.2020.5.29.4\lib\net46\Assembly-CSharp-firstpass.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="BepInEx, Version=5.4.20.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\IllusionLibs.BepInEx.5.4.20\lib\net35\BepInEx.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Harmony">
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\BepInEx.Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Preloader">
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\BepInEx.Preloader.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\IllusionLibs.HoneySelect2.Cinemachine.2018.4.11.4\lib\net46\Cinemachine.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="HarmonyXInterop">
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\HarmonyXInterop.dll</HintPath>
+    </Reference>
     <Reference Include="HS2API, Version=1.35.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\IllusionModdingAPI.HS2API.1.35.0\lib\net46\HS2API.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="HS2PE">
-      <HintPath>..\..\packages\HSPlugins.HoneySelect2\HS2PE.dll</HintPath>
     </Reference>
     <Reference Include="HS2_ExtensibleSaveFormat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ExtensibleSaveFormat.HoneySelect2.19.2.1\lib\net46\HS2_ExtensibleSaveFormat.dll</HintPath>
@@ -80,9 +85,23 @@
       <HintPath>..\..\packages\IllusionLibs.HoneySelect2.IL.2020.5.29.4\lib\net46\IL.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="NodesConstraints, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\HSPlugins.HoneySelect2\NodesConstraints.dll</HintPath>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\illusionlibs\packaging\BepInEx\libraries\MonoMod.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Serialization, Version=2.0.13.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\IllusionLibs.HoneySelect2.Sirenix.Serialization.2020.5.29.4\lib\net46\Sirenix.Serialization.dll</HintPath>
@@ -90,11 +109,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
-    <Reference Include="Timeline, Version=1.1.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\HSPlugins.HoneySelect2\Timeline.dll</HintPath>
-      <Aliases>global,aliasTimeline</Aliases>
-    </Reference>
     <Reference Include="UniRx, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\IllusionLibs.HoneySelect2.UniRx.2020.5.29.4\lib\net46\UniRx.dll</HintPath>
       <Private>False</Private>
@@ -134,6 +148,37 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="NodesConstraints.HS2">
+			<HintPath>..\..\bin\NodesConstraints.dll</HintPath>
+			<Private>False</Private>
+			<SpecificVersion>False</SpecificVersion>
+		</Reference>
+		<Reference Include="Timeline.HS2">
+			<HintPath>..\..\bin\Timeline.dll</HintPath>
+			<Private>False</Private>
+			<SpecificVersion>False</SpecificVersion>
+			<Aliases>global,aliasTimeline</Aliases>
+		</Reference>
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\hsplugins\HS2PE\HS2PE.csproj">
+      <Project>{19bf99c1-720f-41f4-a241-eb4cf589e6ad}</Project>
+      <Name>HS2PE</Name>
+			<SpecificVersion>False</SpecificVersion>
+    </ProjectReference>
+    <!-- <ProjectReference Include="..\..\hsplugins\NodesConstraints.HS2\NodesConstraints.HS2.csproj">
+      <Project>{9e8a6bdf-1100-4b2e-b2f4-69e1c00092af}</Project>
+      <Name>NodesConstraints.HS2</Name>
+			<SpecificVersion>False</SpecificVersion>
+    </ProjectReference>
+    <ProjectReference Include="..\..\hsplugins\Timeline.HS2\Timeline.HS2.csproj">
+      <Project>{0e8a5a0b-d464-4950-ba76-e23f4f74fcfd}</Project>
+      <Name>Timeline.HS2</Name>
+      <Aliases>global,aliasTimeline</Aliases>
+			<SpecificVersion>False</SpecificVersion>
+    </ProjectReference> -->
   </ItemGroup>
   <Import Project="..\ShalltyUtils.Core\ShalltyUtils.Core.projitems" Label="Shared" />
   <Import Project="..\..\Shared\Shared.projitems" Label="Shared" />
