@@ -40,6 +40,7 @@ namespace ShalltyUtils
         private static Toggle toggleTimeRandom;
 
         public static Toggle animBakeToggleHead;
+        public static Toggle animBakeToggleChest;
         public static Toggle animBakeToggleLeftArm;
         public static Toggle animBakeToggleLeftFingers;
         public static Toggle animBakeToggleRightArm;
@@ -311,27 +312,31 @@ namespace ShalltyUtils
             ((RectTransform)animBakeToggleHead.transform.Find("Background").transform).sizeDelta = new Vector2(40f, 20f);
             ((RectTransform)animBakeToggleHead.transform.Find("Label").transform).SetRect(0f, 0f, 1f, 1f, -16f, 21.5f, -44f, 18.5f);
 
+            animBakeToggleChest = UIUtility.CreateToggle("ShalltyUtilsButton", animBakePanel.transform, "CHEST");
+            animBakeToggleChest.transform.SetRect(0.5f, 0.5f, 0.5f, 0.5f, -20f, 140f, 60f, 160f);
+            ((RectTransform)animBakeToggleChest.transform.Find("Background").transform).sizeDelta = new Vector2(40f, 20f);
+            ((RectTransform)animBakeToggleChest.transform.Find("Label").transform).SetRect(0f, 0f, 1f, 1f, -16f, 21.5f, -44f, 18.5f);
 
             animBakeToggleLeftArm = UIUtility.CreateToggle("ShalltyUtilsButton", animBakePanel.transform, "LEFT ARM");
-            animBakeToggleLeftArm.transform.SetRect(0.5f, 0.5f, 0.5f, 0.5f, -75f, 140f, 35f, 160f);
+            animBakeToggleLeftArm.transform.SetRect(0.5f, 0.5f, 0.5f, 0.5f, -85f, 140f, 35f, 160f);
             ((RectTransform)animBakeToggleLeftArm.transform.Find("Background").transform).sizeDelta = new Vector2(40f, 20f);
             ((RectTransform)animBakeToggleLeftArm.transform.Find("Label").transform).SetRect(0f, 0f, 1f, 1f, -36f, 21.5f, -64f, 18.5f);
 
 
             animBakeToggleLeftFingers = UIUtility.CreateToggle("ShalltyUtilsButton", animBakePanel.transform, "LEFT FINGERS");
-            animBakeToggleLeftFingers.transform.SetRect(0.5f, 0.5f, 0.5f, 0.5f, -75f, 90f, 75f, 110f);
+            animBakeToggleLeftFingers.transform.SetRect(0.5f, 0.5f, 0.5f, 0.5f, -85f, 90f, 75f, 110f);
             ((RectTransform)animBakeToggleLeftFingers.transform.Find("Background").transform).sizeDelta = new Vector2(40f, 20f);
             ((RectTransform)animBakeToggleLeftFingers.transform.Find("Label").transform).SetRect(0f, 0f, 1f, 1f, -51f, 21.5f, -79f, 18.5f);
 
 
             animBakeToggleRightArm = UIUtility.CreateToggle("ShalltyUtilsButton", animBakePanel.transform, "RIGHT ARM");
-            animBakeToggleRightArm.transform.SetRect(0.5f, 0.5f, 0.5f, 0.5f, 45f, 140f, 155f, 160f);
+            animBakeToggleRightArm.transform.SetRect(0.5f, 0.5f, 0.5f, 0.5f, 65f, 140f, 155f, 160f);
             ((RectTransform)animBakeToggleRightArm.transform.Find("Background").transform).sizeDelta = new Vector2(40f, 20f);
-            ((RectTransform)animBakeToggleRightArm.transform.Find("Label").transform).SetRect(0f, 0f, 1f, 1f, -36f, 21.5f, -64f, 18.5f);
+            ((RectTransform)animBakeToggleRightArm.transform.Find("Label").transform).SetRect(0f, 0f, 1f, 1f, -31f, 21.5f, -59f, 18.5f);
 
 
             animBakeToggleRightFingers = UIUtility.CreateToggle("ShalltyUtilsButton", animBakePanel.transform, "RIGHT FINGERS");
-            animBakeToggleRightFingers.transform.SetRect(0.5f, 0.5f, 0.5f, 0.5f, 55f, 90f, 205f, 110f);
+            animBakeToggleRightFingers.transform.SetRect(0.5f, 0.5f, 0.5f, 0.5f, 65f, 90f, 205f, 110f);
             ((RectTransform)animBakeToggleRightFingers.transform.Find("Background").transform).sizeDelta = new Vector2(40f, 20f);
             ((RectTransform)animBakeToggleRightFingers.transform.Find("Label").transform).SetRect(0f, 0f, 1f, 1f, -51f, 21.5f, -79f, 18.5f);
 

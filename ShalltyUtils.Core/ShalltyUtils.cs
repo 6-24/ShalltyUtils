@@ -1319,22 +1319,30 @@ namespace ShalltyUtils
 
                         // BUST
 
-                        ObjectCtrlInfo bustFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_d_bust00"), true, true, true, true, true);
+                        ObjectCtrlInfo bustFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Mune00"), true, true, true, true, true);
 
-                        ObjectCtrlInfo bustRFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_d_bust01_R"), true, true, true, true, false, "BUST R");
-                        ObjectCtrlInfo bustLFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_d_bust01_L"), true, true, true, true, false, "BUST L");
+                        ObjectCtrlInfo bustR1Folder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Mune01_R"), true, true, true, true, false, "BUST 1 R");
+                        ObjectCtrlInfo bustL1Folder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Mune01_L"), true, true, true, true, false, "BUST 1 L");
+                        ObjectCtrlInfo bustR2Folder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Mune02_R"), true, true, true, true, false, "BUST 2 R");
+                        ObjectCtrlInfo bustL2Folder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Mune02_L"), true, true, true, true, false, "BUST 2 L");
+                        ObjectCtrlInfo bustR3Folder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Mune03_R"), true, true, true, true, false, "BUST 3 R");
+                        ObjectCtrlInfo bustL3Folder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Mune03_L"), true, true, true, true, false, "BUST 3 L");
 
-                        Singleton<TreeNodeCtrl>.Instance.SetParent(bustRFolder.treeNodeObject, bustFolder.treeNodeObject.child[0]);
-                        Singleton<TreeNodeCtrl>.Instance.SetParent(bustLFolder.treeNodeObject, bustFolder.treeNodeObject.child[0]);
+                        Singleton<TreeNodeCtrl>.Instance.SetParent(bustR1Folder.treeNodeObject, bustFolder.treeNodeObject.child[0]);
+                        Singleton<TreeNodeCtrl>.Instance.SetParent(bustL1Folder.treeNodeObject, bustFolder.treeNodeObject.child[0]);
+                        Singleton<TreeNodeCtrl>.Instance.SetParent(bustR2Folder.treeNodeObject, bustFolder.treeNodeObject.child[0]);
+                        Singleton<TreeNodeCtrl>.Instance.SetParent(bustL2Folder.treeNodeObject, bustFolder.treeNodeObject.child[0]);
+                        Singleton<TreeNodeCtrl>.Instance.SetParent(bustR3Folder.treeNodeObject, bustFolder.treeNodeObject.child[0]);
+                        Singleton<TreeNodeCtrl>.Instance.SetParent(bustL3Folder.treeNodeObject, bustFolder.treeNodeObject.child[0]);
 
                         Singleton<TreeNodeCtrl>.Instance.SetParent(bustFolder.treeNodeObject, folder.treeNodeObject);
 
                         // SPINE
 
-                        ObjectCtrlInfo spineFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_j_spine01"), true, true, false, false, true);
+                        ObjectCtrlInfo spineFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Spine01"), true, true, false, false, true);
 
-                        ObjectCtrlInfo spine01Folder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_s_spine01"), true, true, false, true);
-                        ObjectCtrlInfo spine02Folder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_s_spine02"), true, true, false, true);
+                        ObjectCtrlInfo spine01Folder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Spine01_s"), true, true, false, true);
+                        ObjectCtrlInfo spine02Folder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Spine02_s"), true, true, false, true);
 
                         Singleton<TreeNodeCtrl>.Instance.SetParent(spine01Folder.treeNodeObject, spineFolder.treeNodeObject.child[0]);
                         Singleton<TreeNodeCtrl>.Instance.SetParent(spine02Folder.treeNodeObject, spineFolder.treeNodeObject.child[0]);
@@ -1343,10 +1351,10 @@ namespace ShalltyUtils
 
                         // SIRI
 
-                        ObjectCtrlInfo siriFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_j_waist02"), true, true, true, false, true, "SIRI");
+                        ObjectCtrlInfo siriFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Kosi02"), true, true, true, false, true, "SIRI");
 
-                        ObjectCtrlInfo siriRFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_d_siri01_R"), true, true, true, true, false, "SIRI R");
-                        ObjectCtrlInfo siriLFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_d_siri01_L"), true, true, true, true, false, "SIRI L");
+                        ObjectCtrlInfo siriRFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Siri_s_R"), true, true, true, true, false, "SIRI R");
+                        ObjectCtrlInfo siriLFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Siri_s_L"), true, true, true, true, false, "SIRI L");
 
                         Singleton<TreeNodeCtrl>.Instance.SetParent(siriRFolder.treeNodeObject, siriFolder.treeNodeObject.child[0]);
                         Singleton<TreeNodeCtrl>.Instance.SetParent(siriLFolder.treeNodeObject, siriFolder.treeNodeObject.child[0]);
@@ -1355,9 +1363,9 @@ namespace ShalltyUtils
 
                         // WAIST
 
-                        ObjectCtrlInfo waistParentFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_j_waist02"), true, true, false, false, true, "WAIST");
+                        ObjectCtrlInfo waistParentFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Kosi01"), true, true, false, false, true, "WAIST");
 
-                        ObjectCtrlInfo waistFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_s_waist02"), true, true, false, false, false, "WAIST");
+                        ObjectCtrlInfo waistFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_Kosi01_s"), true, true, false, false, false, "WAIST");
 
                         Singleton<TreeNodeCtrl>.Instance.SetParent(waistFolder.treeNodeObject, waistParentFolder.treeNodeObject.child[0]);
 
@@ -1365,10 +1373,10 @@ namespace ShalltyUtils
 
                         // LEFT THIGH
 
-                        ObjectCtrlInfo thighLFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_j_thigh00_L"), true, true, true, false, true);
+                        ObjectCtrlInfo thighLFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_LegUp00_L"), true, true, true, false, true);
 
-                        ObjectCtrlInfo thigh01LFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_s_thigh01_L"), true, true, true, true);
-                        ObjectCtrlInfo thigh02LFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_d_thigh02_L"), true, true, true, true);
+                        ObjectCtrlInfo thigh01LFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_LegUp01_L"), true, true, true, true);
+                        ObjectCtrlInfo thigh02LFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_LegUp02_L"), true, true, true, true);
 
                         Singleton<TreeNodeCtrl>.Instance.SetParent(thigh01LFolder.treeNodeObject, thighLFolder.treeNodeObject.child[0]);
                         Singleton<TreeNodeCtrl>.Instance.SetParent(thigh02LFolder.treeNodeObject, thighLFolder.treeNodeObject.child[0]);
@@ -1377,10 +1385,10 @@ namespace ShalltyUtils
 
                         // RIGHT THIGH
 
-                        ObjectCtrlInfo thighRFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_j_thigh00_R"), true, true, true, false, true);
+                        ObjectCtrlInfo thighRFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_LegUp00_R"), true, true, true, false, true);
 
-                        ObjectCtrlInfo thigh01RFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_s_thigh01_R"), true, true, true, true);
-                        ObjectCtrlInfo thigh02RFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_d_thigh02_R"), true, true, true, true);
+                        ObjectCtrlInfo thigh01RFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_LegUp01_R"), true, true, true, true);
+                        ObjectCtrlInfo thigh02RFolder = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_J_LegUp02_R"), true, true, true, true);
 
                         Singleton<TreeNodeCtrl>.Instance.SetParent(thigh01RFolder.treeNodeObject, thighRFolder.treeNodeObject.child[0]);
                         Singleton<TreeNodeCtrl>.Instance.SetParent(thigh02RFolder.treeNodeObject, thighRFolder.treeNodeObject.child[0]);

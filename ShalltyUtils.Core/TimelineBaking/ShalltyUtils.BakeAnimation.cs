@@ -1,11 +1,14 @@
 ﻿extern alias aliasTimeline;
 using aliasTimeline::Timeline;
+using HSPE;
+using HSPE.AMModules;
 using Studio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ToolBox.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 using static ShalltyUtils.ShalltyUtils;
@@ -154,6 +157,218 @@ namespace ShalltyUtils.TimelineBaking
                 else
                     interpolableList.Add(_timeline._interpolables[interpolableRot.GetHashCode()]);
             }
+
+						List<string> transformNamesKKPE = new List<string>();
+
+						List<string> leftMuneBones = new List<string> {
+                        "k_f_mune00L_00",
+                        "k_f_mune01L_00",
+                        "k_f_mune02L_00",
+                        "cf_J_Mune01_L",
+                        "cf_J_Mune02_L",
+                        "cf_J_Mune03_L",
+                        "cf_J_Mune00_L",
+												"cf_J_Mune00",
+												"cf_J_Mune00_t_L",
+												"cf_J_Mune00_L",
+												"cf_J_Mune00_s_L",
+												"cf_J_Mune00_d_L",
+												"cf_J_Mune01_L_00",
+												"cf_J_Mune01_L*",
+												"cf_J_Mune01_s_L",
+												"cf_J_Mune01_t_L",
+												"cf_J_Mune02_L_00",
+												"cf_J_Mune02_L*",
+												"cf_J_Mune02_s_L",
+												"cf_hit_Mune021_s_L",
+												"cf_hit_Mune02_s_L",
+												"cf_J_Mune02_t_L",
+												"cf_J_Mune03_L_00",
+												"cf_J_Mune03_L*",
+												"cf_J_Mune03_s_L",
+												"cf_J_Mune03_s_L",
+												"cf_J_Mune04_s_L",
+												"cf_J_Mune_Nip01_L",
+												"cf_J_Mune_Nip01_s_L",
+												"cf_J_Mune_Nip02_L",
+												"cf_J_Mune_Nip02_s_L",
+												"k_f_munenipL_00",
+												"k_f_munenipL_01",
+												"k_f_munenipL_02",
+												"k_f_munenipL_03",
+												"cf_J_Mune_Nipacs01_L",
+												"k_f_mune04L_00",
+												"k_f_mune04L_01",
+												"k_f_mune04L_02",
+												"k_f_mune04L_03",
+												"k_f_mune03L_00",
+												"k_f_mune03L_01",
+												"k_f_mune03L_02",
+												"k_f_mune03L_03",
+												"k_f_mune02L_01",
+												"k_f_mune02L_00",
+												"k_f_mune02L_03",
+												"k_f_mune02L_02",
+												"k_f_mune01L_00",
+												"k_f_mune01L_01",
+												"k_f_mune01L_02",
+												"k_f_mune01L_03",
+												"k_f_mune00L_01",
+												"k_f_mune00L_02",
+												"k_f_mune00L_03",
+												"cf_J_Mune00_L_00",
+                    };
+						List<string> rightMuneBones = new List<string> {
+                        "k_f_mune00R_00",
+												"k_f_mune01R_00",
+                        "k_f_mune02R_00",
+                        "cf_J_Mune01_R",
+                        "cf_J_Mune02_R",
+                        "cf_J_Mune03_R",
+												"k_f_mune01R_00",
+												"cf_J_Mune00_t_R",
+												"cf_J_Mune00_R_00",
+												"cf_J_Mune00_R",
+												"cf_J_Mune00_s_R",
+												"cf_J_Mune00_d_R",
+												"cf_J_Mune01_R_00",
+												"cf_J_Mune01_s_R",
+												"cf_J_Mune01_t_R",
+												"cf_J_Mune02_R_00",
+												"cf_J_Mune02_s_R",
+												"cf_hit_Mune021_s_R",
+												"cf_hit_Mune02_s_R",
+												"k_f_mune02R_00",
+												"cf_J_Mune02_t_R",
+												"cf_J_Mune03_R_00",
+												"cf_J_Mune03_s_R",
+												"cf_J_Mune04_s_R",
+												"cf_J_Mune_Nip01_R",
+												"cf_J_Mune_Nip01_s_R",
+												"cf_J_Mune_Nip02_R",
+												"cf_J_Mune_Nip02_s_R",
+												"k_f_munenipR_00",
+												"k_f_munenipR_01",
+												"k_f_munenipR_02",
+												"k_f_munenipR_03",
+												"cf_J_Mune_Nipacs01_R",
+												"k_f_mune04R_00",
+												"k_f_mune04R_01",
+												"k_f_mune04R_02",
+												"k_f_mune04R_03",
+												"k_f_mune03R_00",
+												"k_f_mune03R_01",
+												"k_f_mune03R_02",
+												"k_f_mune03R_03",
+												"k_f_mune02R_02",
+												"k_f_mune02R_01",
+												"k_f_mune02R_03",
+												"k_f_mune01R_00",
+												"k_f_mune01R_01",
+												"k_f_mune01R_02",
+												"k_f_mune01R_03",
+												"k_f_mune00R_01",
+												"k_f_mune00R_02",
+												"k_f_mune00R_03"
+                    };
+						
+						if (UI.animBakeToggleChest.isOn) {
+							transformNamesKKPE.Add("cf_Mune00");
+							transformNamesKKPE.AddRange(leftMuneBones);
+							transformNamesKKPE.AddRange(rightMuneBones);
+						}
+
+						var poseCtrl = firstChar.guideObject.transformTarget.GetComponent<HSPE.PoseController>();
+
+						InterpolableModel modelKKPERot = _timeline._interpolableModelsList.Find(i => i.id == "boneRot");
+						if (modelKKPERot != null && poseCtrl != null && poseCtrl._bonesEditor != null)
+						{
+								object dummyParam = BonesEditor.TimelineCompatibility.GetParameter(firstChar);
+								Type hashedPairType = dummyParam.GetType();
+
+								foreach (string boneName in transformNamesKKPE)
+								{
+										Transform boneTransform = FindLoop(firstChar.charAnimeCtrl.animator.transform, boneName);
+										if (boneTransform == null) continue;
+
+										object manualParameter = Activator.CreateInstance(hashedPairType, poseCtrl._bonesEditor, boneTransform);
+
+										Interpolable interpolableKKPE = new Interpolable(firstChar, manualParameter, modelKKPERot);
+										// interpolableKKPE.alias = "boneRot | " + FancyBoneName(boneName);
+
+										int hash = interpolableKKPE.GetHashCode();
+										if (!_timeline._interpolables.ContainsKey(hash))
+										{
+												_timeline._interpolables.Add(hash, interpolableKKPE);
+												_timeline._interpolablesTree.AddLeaf(interpolableKKPE);
+												interpolableList.Add(interpolableKKPE);
+										}
+										else
+										{
+												interpolableList.Add(_timeline._interpolables[hash]);
+										}
+								}
+						}
+
+						InterpolableModel modelKKPEPos = _timeline._interpolableModelsList.Find(i => i.id == "bonePos");
+						if (modelKKPEPos != null && poseCtrl != null && poseCtrl._bonesEditor != null)
+						{
+								object dummyParam = BonesEditor.TimelineCompatibility.GetParameter(firstChar);
+								Type hashedPairType = dummyParam.GetType();
+
+								foreach (string boneName in transformNamesKKPE)
+								{
+										Transform boneTransform = FindLoop(firstChar.charAnimeCtrl.animator.transform, boneName);
+										if (boneTransform == null) continue;
+
+										object manualParameter = Activator.CreateInstance(hashedPairType, poseCtrl._bonesEditor, boneTransform);
+
+										Interpolable interpolableKKPE = new Interpolable(firstChar, manualParameter, modelKKPEPos);
+										// interpolableKKPE.alias = "bonePos | " + FancyBoneName(boneName);
+
+										int hash = interpolableKKPE.GetHashCode();
+										if (!_timeline._interpolables.ContainsKey(hash))
+										{
+												_timeline._interpolables.Add(hash, interpolableKKPE);
+												_timeline._interpolablesTree.AddLeaf(interpolableKKPE);
+												interpolableList.Add(interpolableKKPE);
+										}
+										else
+										{
+												interpolableList.Add(_timeline._interpolables[hash]);
+										}
+								}
+						}
+
+						InterpolableModel modelKKPEScale = _timeline._interpolableModelsList.Find(i => i.id == "boneScale");
+						if (modelKKPEScale != null && poseCtrl != null && poseCtrl._bonesEditor != null)
+						{
+								object dummyParam = BonesEditor.TimelineCompatibility.GetParameter(firstChar);
+								Type hashedPairType = dummyParam.GetType();
+
+								foreach (string boneName in transformNamesKKPE)
+								{
+										Transform boneTransform = FindLoop(firstChar.charAnimeCtrl.animator.transform, boneName);
+										if (boneTransform == null) continue;
+
+										object manualParameter = Activator.CreateInstance(hashedPairType, poseCtrl._bonesEditor, boneTransform);
+
+										Interpolable interpolableKKPE = new Interpolable(firstChar, manualParameter, modelKKPEScale);
+										// interpolableKKPE.alias = "boneScale | " + FancyBoneName(boneName);
+
+										int hash = interpolableKKPE.GetHashCode();
+										if (!_timeline._interpolables.ContainsKey(hash))
+										{
+												_timeline._interpolables.Add(hash, interpolableKKPE);
+												_timeline._interpolablesTree.AddLeaf(interpolableKKPE);
+												interpolableList.Add(interpolableKKPE);
+										}
+										else
+										{
+												interpolableList.Add(_timeline._interpolables[hash]);
+										}
+								}
+						}
 
             if (interpolableList.Count == 0) return;
 
@@ -320,6 +535,17 @@ namespace ShalltyUtils.TimelineBaking
                     return false;
             }
         }
+
+				private static Transform FindLoop(Transform parent, string name)
+				{
+						if (parent.name == name) return parent;
+						foreach (Transform child in parent)
+						{
+								Transform found = FindLoop(child, name);
+								if (found != null) return found;
+						}
+						return null;
+				}
 
     }
 }
