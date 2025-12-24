@@ -1164,7 +1164,7 @@ namespace ShalltyUtils
 
                             bool oldKeepTimeline = keepTimeline.Value;
                             keepTimeline.Value = false;
-                            armature = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_n_height"), false, false, true, true, true);
+                            armature = CreateConstraint(boneList.FirstOrDefault(bone => bone.name == "cf_N_height"), false, false, true, true, true);
                             keepTimeline.Value = oldKeepTimeline;
                             Singleton<TreeNodeCtrl>.Instance.DeleteNode(armature.treeNodeObject.child[0]);
                             armature.treeNodeObject.textName = armatureName;
